@@ -1862,7 +1862,7 @@
 
 
 <!--Triggers-->
-<!--
+
 <attatchment name="triggerAttachment010a" attatchTo="British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment010a"/>
 	<option name="uses" value="1"/>
@@ -1890,7 +1890,7 @@
 	<option name="when" value="before:italiansCombatMove"/>
 	<option name="notification" value="Welcome"/>
 </attatchment>    
--->
+
 <attatchment name="triggerAttachment020a" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment020a"/>
 	<option name="uses" value="1"/>
@@ -1899,14 +1899,14 @@
 	<option name="changeOwnership" value="Ethiopia:any:British:true"/>
 	<option name="changeOwnership" value="Anglo Egyptian Sudan:any:British:true"/>
 	<option name="changeOwnership" value="Kenya:any:British:true"/>
-<!--<option name="notification" value="AttackEthiopiaSudan"/>   -->
+	<option name="notification" value="AttackEthiopiaSudan"/>  
 </attatchment>
 
 <attatchment name="triggerAttachment020b" attatchTo="British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment020b"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="after:italiansEndTurn"/>
-<!--<option name="notification" value="Armourunlocked"/>   -->
+	<option name="notification" value="Armourunlocked"/>  
 </attatchment>
 
 <attatchment name="triggerAttachment030a" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
@@ -2104,15 +2104,6 @@
 	<option name="placement" value="France:fighter" count="2"/>
 	<option name="notification" value="GoFrance"/>
 </attatchment>
-
-<!--
-<attatchment name="triggerAttachment060c" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment060"/>
-	<option name="uses" value="1"/>
-	<option name="when" value="before:germansPlace"/>
-	<option name="productionRule" value="production_Starting:buyFighter"/>
-</attatchment>
--->
 
 <attatchment name="triggerAttachment060c" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment060"/>
