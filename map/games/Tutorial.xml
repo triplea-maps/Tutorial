@@ -2163,11 +2163,10 @@
 	<option name="notification" value="GoBritain"/>
 </attatchment>
 
-<<<<<<< HEAD
 <attatchment name="triggerAttachment080b" attatchTo="Neutral_Nations" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment010a"/>
 	<option name="uses" value="1"/>
-	<option name="when" value="before:germansPlace"/>	
+	<option name="when" value="before:germansPlace"/>
 	<option name="removeUnits" value="United Kingdom:infantry" count="20"/>
 	<option name="removeUnits" value="United Kingdom:armour" count="8"/>	
 	<option name="removeUnits" value="United Kingdom:fighter" count="1"/>
@@ -2273,13 +2272,7 @@
 <attatchment name="rulesAttatchment" attatchTo="British" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
   <option name="movementRestrictionTerritories" value="81 Sea Zone:91 Sea Zone:103 Sea Zone:104 Sea Zone:105 Sea Zone:107 Sea Zone:117 Sea Zone:122 Sea Zone:125 Sea Zone:113 Sea Zone"/>
   <option name="movementRestrictionType" value="disallowed"/>
-</attatchment>
-=======
->>>>>>> Tutorial/3-10France
-
-				
-				
-			
+</attatchment>			
 				
         </attatchmentList>
 		
@@ -2326,7 +2319,7 @@
 <unitPlacement unitType="armour" territory="France" quantity="3" owner="Neutral_Nations"/>
 <unitPlacement unitType="fighter" territory="France" quantity="2" owner="Neutral_Nations"/>
 
-<<<<<<< HEAD
+
 <!--Britain -->
 
 <unitPlacement unitType="factory" territory="United Kingdom" quantity="1" owner="Neutral_Nations"/>
@@ -2343,8 +2336,6 @@
 
 <unitPlacement unitType="battleship" territory="110 Sea Zone" quantity="1" owner="British"/>
 <unitPlacement unitType="battleship" territory="111 Sea Zone" quantity="1" owner="British"/>
-=======
->>>>>>> Tutorial/3-10France
 
                 </unitInitialize>
 				
