@@ -726,6 +726,7 @@
                 <unit name="fighter"/>
                 <unit name="bomber"/>
                 <unit name="transport"/>
+		<!--	<unit name="transports"/>             -->
                 <unit name="submarine"/>
                 <unit name="destroyer"/>
 				<unit name="carrier"/>
@@ -733,7 +734,7 @@
                 <unit name="aaGun"/>
 				<unit name="factory"/>
 				<unit name="nomove"/>
-				<unit name="nomovesea"/>
+		<!--    <unit name="nomovesea"/>              -->
         </unitList>
 					
         <gamePlay>
@@ -783,6 +784,13 @@
                         <step name="russiansPlace" delegate="place" player="Russians"/>
                         <step name="russiansEndTurn" delegate="endTurn" player="Russians"/>
 						
+						<!-- British Game Sequence -->
+                        <step name="britishPurchase" delegate="purchase" player="British"/>
+                        <step name="britishCombatMove" delegate="move" player="British"/>
+                        <step name="britishBattle" delegate="battle" player="British"/>
+                        <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move"/>
+                        <step name="britishPlace" delegate="place" player="British"/>
+                        <step name="britishEndTurn" delegate="endTurn" player="British"/>
 						
 						<!-- UK_Africa Game Sequence -->
 												
@@ -828,7 +836,12 @@
                         <cost resource="PUs" quantity="8" />
                         <result resourceOrUnit="transport" quantity="1"/>
                 </productionRule>
-
+			<!--
+				<productionRule name="buyTransports">
+                        <cost resource="PUs" quantity="8" />
+                        <result resourceOrUnit="transports" quantity="1"/>
+                </productionRule>
+			-->
                 <productionRule name="buyCarrier">
                         <cost resource="PUs" quantity="16" />
                         <result resourceOrUnit="carrier" quantity="1"/>
@@ -888,10 +901,14 @@
 						<frontierRules name="buySubmarine"/>
 						<frontierRules name="buyAAGun"/>
 				</productionFrontier>
+				
+				<productionFrontier name="production_British">
+                        <frontierRules name="buyTransport"/>
+				</productionFrontier>
 												
                 <playerProduction player="Americans" frontier="production_Starting"/>
                 <playerProduction player="Chinese" frontier="production_Starting"/>
-                <playerProduction player="British" frontier="production_Starting"/>
+                <playerProduction player="British" frontier="production_British"/>
                 <playerProduction player="UK_Africa" frontier="production_Starting"/>
                 <playerProduction player="French" frontier="production_Starting"/>
                 <playerProduction player="Germans" frontier="production_Starting"/>
@@ -1099,7 +1116,14 @@
                          <option name="attack" value="0"/>
                          <option name="defense" value="1"/>                         
                     </attatchment>
-            
+				<!--	
+					<attatchment name="unitAttatchment" attatchTo="transports" javaClass="games.strategy.triplea.attatchments.UnitAttachment" type="unitType">
+                         <option name="movement" value="2"/>
+                         <option name="isSea" value="true"/>  
+                         <option name="attack" value="0"/>
+                         <option name="defense" value="1"/>                         
+                    </attatchment>
+                -->        
                     <attatchment name="unitAttatchment" attatchTo="battleship" javaClass="games.strategy.triplea.attatchments.UnitAttachment" type="unitType">
                          <option name="movement" value="2"/>
                          <option name="isSea" value="true"/>
@@ -1144,16 +1168,17 @@
                     </attatchment>
 					
 					<attatchment name="unitAttatchment" attatchTo="nomove" javaClass="games.strategy.triplea.attatchments.UnitAttachment" type="unitType">
-                         <option name="isFactory" value="true"/>
+                         <option name="isInfrastructure" value="true"/>
+						 <option name="destroyedWhenCapturedBy" value="Germans:Italians"/>
 						 <option name="givesMovement" value="-8:infantry"/>
 						 <option name="givesMovement" value="-8:armour"/>
-						 <option name="givesMovement" value="-8:fighter"/>
-						 <option name="givesMovement" value="-8:bomber"/>
+				 <!--	<option name="givesMovement" value="-8:fighter"/>
+						 <option name="givesMovement" value="-8:bomber"/>-->
 						 <option name="givesMovement" value="-8:aaGun"/>							 
                     </attatchment>
-					
+				<!--	
 					<attatchment name="unitAttatchment" attatchTo="nomovesea" javaClass="games.strategy.triplea.attatchments.UnitAttachment" type="unitType">
-                         <option name="isFactory" value="true"/>
+                         <option name="isInfrastructure" value="true"/>
 						 <option name="isSea" value="true"/>
 						 <option name="givesMovement" value="-8:transport"/>
 						 <option name="givesMovement" value="-8:battleship"/>
@@ -1162,7 +1187,7 @@
 						 <option name="givesMovement" value="-8:carrier"/>
 						 <option name="givesMovement" value="-8:fighter"/>						 
                     </attatchment>
-				
+				-->
 				<!-- Territory Attachments -->							   
 					
 					<!-- E40 -->
@@ -1177,10 +1202,12 @@
                     <attatchment name="territoryAttatchment" attatchTo="Central United States" javaClass="games.strategy.triplea.attatchments.TerritoryAttachment" type="territory">
                         <option name="production" value="12"/>
 						<option name="unitProduction" value="12"/>
+						<option name="capital" value="Neutral_Nations"/>
                    </attatchment>
 				   
                     <attatchment name="territoryAttatchment" attatchTo="Central America" javaClass="games.strategy.triplea.attatchments.TerritoryAttachment" type="territory">
-                        <option name="production" value="1"/>
+                        <option name="production" value="1"/>						
+						<option name="capital" value="Chinese"/>
                    </attatchment>
 				   
                     <attatchment name="territoryAttatchment" attatchTo="Greenland" javaClass="games.strategy.triplea.attatchments.TerritoryAttachment" type="territory">
@@ -1381,6 +1408,7 @@
 				   
                     <attatchment name="territoryAttatchment" attatchTo="Poland" javaClass="games.strategy.triplea.attatchments.TerritoryAttachment" type="territory">
                         <option name="production" value="2"/>
+						<option name="capital" value="Eastern_Europe"/>
                    </attatchment>
 				   
                     <attatchment name="territoryAttatchment" attatchTo="Germany" javaClass="games.strategy.triplea.attatchments.TerritoryAttachment" type="territory">
@@ -1391,6 +1419,7 @@
 				   
                     <attatchment name="territoryAttatchment" attatchTo="Norway" javaClass="games.strategy.triplea.attatchments.TerritoryAttachment" type="territory">
                         <option name="production" value="3"/>
+						<option name="capital" value="Scandinavia"/>
                    </attatchment>
 				   
                     <attatchment name="territoryAttatchment" attatchTo="Denmark" javaClass="games.strategy.triplea.attatchments.TerritoryAttachment" type="territory">
@@ -1859,7 +1888,9 @@
 	<option name="alliedOwnershipTerritories" value="France:Holland Belgium:Normandy Bordeaux:Southern France" count="4"/>
 </attatchment>
 
-
+<attatchment name="conditionAttachment090" attatchTo="British" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
+	<option name="alliedOwnershipTerritories" value="United Kingdom:Scotland" count="2"/>
+</attatchment>
 
 <!--Triggers-->
 
@@ -1894,7 +1925,7 @@
 <attatchment name="triggerAttachment020a" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment020a"/>
 	<option name="uses" value="1"/>
-	<option name="when" value="after:italiansEndTurn"/>
+	<option name="when" value="after:britishEndTurn"/>
 	<option name="placement" value="Italian Somaliland:armour" count="1"/>
 	<option name="changeOwnership" value="Ethiopia:any:British:true"/>
 	<option name="changeOwnership" value="Anglo Egyptian Sudan:any:British:true"/>
@@ -2020,29 +2051,34 @@
 	<option name="placement" value="Norway:infantry" count="3"/>
 </attatchment>
 
-<!--
+
 <attatchment name="triggerAttachment040d" attatchTo="Neutral_Nations" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment040"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansPlace"/>
+	<option name="removeUnits" value="112 Sea Zone:battleship" count="2"/>
+	<!--
 	<option name="removeUnits" value="112 Sea Zone:submarine" count="3"/>
 	<option name="removeUnits" value="112 Sea Zone:destroyer" count="9"/>
-	<option name="removeUnits" value="112 Sea Zone:battleship" count="5"/>
 	<option name="removeUnits" value="112 Sea Zone:carrier" count="1"/>
 	<option name="removeUnits" value="112 Sea Zone:fighter" count="2"/>
+	-->
 </attatchment>
--->
+
 
 <attatchment name="triggerAttachment040e" attatchTo="British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment040"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansPlace"/>
+	<option name="placement" value="112 Sea Zone:battleship" count="2"/>
+	<!--
 	<option name="placement" value="112 Sea Zone:submarine" count="3"/>
 	<option name="placement" value="112 Sea Zone:destroyer" count="9"/>
-	<option name="placement" value="112 Sea Zone:battleship" count="5"/>
 	<option name="placement" value="112 Sea Zone:carrier" count="1"/>
 	<option name="placement" value="112 Sea Zone:fighter" count="2"/>
-</attatchment>								
+	-->
+</attatchment>	
+						
 
 <attatchment name="triggerAttachment040f" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment040"/>
@@ -2120,13 +2156,126 @@
 	<option name="notification" value="Francesacked"/>
 </attatchment>		
 			
-<attatchment name="triggerAttachment080" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+<attatchment name="triggerAttachment080a" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment080"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansPlace"/>
 	<option name="notification" value="GoBritain"/>
 </attatchment>
 
+<<<<<<< HEAD
+<attatchment name="triggerAttachment080b" attatchTo="Neutral_Nations" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="conditions" value="conditionAttachment010a"/>
+	<option name="uses" value="1"/>
+	<option name="when" value="before:germansPlace"/>	
+	<option name="removeUnits" value="United Kingdom:infantry" count="20"/>
+	<option name="removeUnits" value="United Kingdom:armour" count="8"/>	
+	<option name="removeUnits" value="United Kingdom:fighter" count="1"/>
+	<option name="removeUnits" value="United Kingdom:factory" count="1"/>	
+	<option name="removeUnits" value="United Kingdom:aaGun" count="1"/>	
+	<option name="removeUnits" value="Scotland:infantry" count="10"/>
+	<option name="removeUnits" value="Scotland:armour" count="4"/>
+	<option name="removeUnits" value="Scotland:fighter" count="1"/>
+	<option name="removeUnits" value="Scotland:factory" count="1"/>
+	<option name="removeUnits" value="Scotland:aaGun" count="1"/>
+</attatchment>
+
+<attatchment name="triggerAttachment080c" attatchTo="British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="conditions" value="conditionAttachment010a"/>
+	<option name="uses" value="1"/>
+	<option name="when" value="before:germansPlace"/>
+	<option name="changeOwnership" value="United Kingdom:any:British:true"/>
+	<option name="changeOwnership" value="Scotland:any:British:true"/>	
+	<option name="placement" value="United Kingdom:infantry" count="20"/>
+	<option name="placement" value="United Kingdom:armour" count="8"/>	
+	<option name="placement" value="United Kingdom:fighter" count="1"/>
+	<option name="placement" value="Scotland:infantry" count="10"/>
+	<option name="placement" value="Scotland:armour" count="4"/>
+	<option name="placement" value="Scotland:fighter" count="1"/>
+</attatchment>
+
+<attatchment name="triggerAttachment080d" attatchTo="British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="conditions" value="conditionAttachment010a"/>
+	<option name="uses" value="1"/>
+	<option name="when" value="before:germansPlace"/>
+	<option name="changeOwnership" value="Egypt:any:British:true"/>
+	<option name="changeOwnership" value="Alexandria:any:British:true"/>
+	<option name="changeOwnership" value="Tobruk:any:British:true"/>	
+	<option name="changeOwnership" value="Nigeria:any:British:true"/>
+	<option name="changeOwnership" value="Gold Coast:any:British:true"/>	
+	<option name="changeOwnership" value="South West Africa:any:British:true"/>	
+	<option name="changeOwnership" value="Union of South Africa:any:British:true"/>
+	<option name="changeOwnership" value="Tanganyika Territory:any:British:true"/>
+	<option name="changeOwnership" value="Rhodesia:any:British:true"/>
+	<option name="changeOwnership" value="Mozambique:any:British:true"/>
+	<option name="changeOwnership" value="Angola:any:British:true"/>		
+	<option name="changeOwnership" value="Gibraltar:any:British:true"/>
+	<option name="changeOwnership" value="Cyprus:any:British:true"/>
+	<option name="changeOwnership" value="Malta:any:British:true"/>
+	<option name="changeOwnership" value="Trans-Jordan:any:British:true"/>
+	<option name="changeOwnership" value="Syria:any:British:true"/>
+	<option name="changeOwnership" value="Saudi Arabia:any:British:true"/>
+	<option name="changeOwnership" value="Iraq:any:British:true"/>	
+	<option name="changeOwnership" value="Northwest Persia:any:British:true"/>
+	<option name="changeOwnership" value="Persia:any:British:true"/>
+	<option name="changeOwnership" value="Eastern Persia:any:British:true"/>
+	<option name="changeOwnership" value="West India:any:British:true"/>	
+<!--<option name="placement" value="United Kingdom:infantry" count="20"/>
+	<option name="placement" value="United Kingdom:armour" count="8"/>	
+	<option name="placement" value="United Kingdom:fighter" count="1"/>
+	<option name="placement" value="United Kingdom:factory" count="1"/>	
+	<option name="placement" value="United Kingdom:aaGun" count="1"/>	
+	<option name="placement" value="Scotland:infantry" count="10"/>
+	<option name="placement" value="Scotland:armour" count="4"/>
+	<option name="placement" value="Scotland:fighter" count="1"/>
+	<option name="placement" value="Scotland:factory" count="1"/>
+	<option name="placement" value="Scotland:aaGun" count="1"/>-->
+</attatchment>
+
+<attatchment name="triggerAttachment080e" attatchTo="French" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="conditions" value="conditionAttachment010a"/>
+	<option name="uses" value="1"/>
+	<option name="when" value="before:germansPlace"/>
+	<option name="changeOwnership" value="French West Africa:any:French:true"/>
+	<option name="changeOwnership" value="French Central Africa:any:French:true"/>
+	<option name="changeOwnership" value="French Equatorial Africa:any:French:true"/>
+	<option name="changeOwnership" value="Belgian Congo:any:French:true"/>	
+	<option name="changeOwnership" value="French Madagascar:any:French:true"/>	
+	
+<!--<option name="placement" value="United Kingdom:infantry" count="20"/>
+	<option name="placement" value="United Kingdom:armour" count="8"/>	
+	<option name="placement" value="United Kingdom:fighter" count="1"/>
+	<option name="placement" value="United Kingdom:factory" count="1"/>	
+	<option name="placement" value="United Kingdom:aaGun" count="1"/>	
+	<option name="placement" value="Scotland:infantry" count="10"/>
+	<option name="placement" value="Scotland:armour" count="4"/>
+	<option name="placement" value="Scotland:fighter" count="1"/>
+	<option name="placement" value="Scotland:factory" count="1"/>
+	<option name="placement" value="Scotland:aaGun" count="1"/>-->
+</attatchment>
+<!--
+<attatchment name="triggerAttachment090a" attatchTo="British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="conditions" value="conditionAttachment090"/>
+	<option name="when" value="after:britishPurchase"/>	
+	<option name="placement" value="United Kingdom:nomove" count="1"/>	
+	<option name="placement" value="Scotland:nomove" count="1"/>
+</attatchment>
+
+<attatchment name="triggerAttachment090b" attatchTo="British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="conditions" value="conditionAttachment090"/>
+	<option name="when" value="after:britishEndTurn"/>	
+	<option name="removeUnits" value="United Kingdom:nomove" count="1"/>	
+	<option name="removeUnits" value="Scotland:nomove" count="1"/>
+</attatchment>		
+-->	
+<!-- Rules -->
+
+<attatchment name="rulesAttatchment" attatchTo="British" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
+  <option name="movementRestrictionTerritories" value="81 Sea Zone:91 Sea Zone:103 Sea Zone:104 Sea Zone:105 Sea Zone:107 Sea Zone:117 Sea Zone:122 Sea Zone:125 Sea Zone:113 Sea Zone"/>
+  <option name="movementRestrictionType" value="disallowed"/>
+</attatchment>
+=======
+>>>>>>> Tutorial/3-10France
 
 				
 				
@@ -2138,6 +2287,7 @@
 				<ownerInitialize>
 					<territoryOwner territory="Italian Somaliland" owner="Italians"/>
 					<territoryOwner territory="British Somaliland" owner="British"/>
+					
 				<!--<territoryOwner territory="Poland" owner="Germans"/>-->
 				</ownerInitialize>
 
@@ -2158,9 +2308,10 @@
 <unitPlacement unitType="infantry" territory="Denmark" quantity="2" owner="Neutral_Nations"/>
 <unitPlacement unitType="infantry" territory="Norway" quantity="3" owner="Neutral_Nations"/>
 <!--
+<unitPlacement unitType="battleship" territory="112 Sea Zone" quantity="2" owner="Neutral_Nations"/>
+
 <unitPlacement unitType="submarine" territory="112 Sea Zone" quantity="3" owner="Neutral_Nations"/>
 <unitPlacement unitType="destroyer" territory="112 Sea Zone" quantity="9" owner="Neutral_Nations"/>
-<unitPlacement unitType="battleship" territory="112 Sea Zone" quantity="5" owner="Neutral_Nations"/>
 <unitPlacement unitType="carrier" territory="112 Sea Zone" quantity="1" owner="Neutral_Nations"/>
 <unitPlacement unitType="fighter" territory="112 Sea Zone" quantity="2" owner="Neutral_Nations"/>
 -->
@@ -2175,19 +2326,38 @@
 <unitPlacement unitType="armour" territory="France" quantity="3" owner="Neutral_Nations"/>
 <unitPlacement unitType="fighter" territory="France" quantity="2" owner="Neutral_Nations"/>
 
+<<<<<<< HEAD
+<!--Britain -->
+
+<unitPlacement unitType="factory" territory="United Kingdom" quantity="1" owner="Neutral_Nations"/>
+<unitPlacement unitType="infantry" territory="United Kingdom" quantity="20" owner="Neutral_Nations"/>
+<unitPlacement unitType="armour" territory="United Kingdom" quantity="8" owner="Neutral_Nations"/>
+<unitPlacement unitType="fighter" territory="United Kingdom" quantity="1" owner="Neutral_Nations"/>
+<unitPlacement unitType="aaGun" territory="United Kingdom" quantity="1" owner="Neutral_Nations"/>
+
+<unitPlacement unitType="factory" territory="Scotland" quantity="1" owner="Neutral_Nations"/>
+<unitPlacement unitType="infantry" territory="Scotland" quantity="10" owner="Neutral_Nations"/>
+<unitPlacement unitType="armour" territory="Scotland" quantity="4" owner="Neutral_Nations"/>
+<unitPlacement unitType="fighter" territory="Scotland" quantity="1" owner="Neutral_Nations"/>
+<unitPlacement unitType="aaGun" territory="Scotland" quantity="1" owner="Neutral_Nations"/>
+
+<unitPlacement unitType="battleship" territory="110 Sea Zone" quantity="1" owner="British"/>
+<unitPlacement unitType="battleship" territory="111 Sea Zone" quantity="1" owner="British"/>
+=======
+>>>>>>> Tutorial/3-10France
 
                 </unitInitialize>
 				
                 <resourceInitialize>
                         <resourceGiven player="Germans" resource="PUs" quantity="0"/>
                         <resourceGiven player="Russians" resource="PUs" quantity="0"/>
-                        <resourceGiven player="British" resource="PUs" quantity="0"/>
+                        <resourceGiven player="British" resource="PUs" quantity="24"/>
 						<resourceGiven player="UK_Africa" resource="PUs" quantity="0"/>
 						<resourceGiven player="Scandinavia" resource="PUs" quantity="0"/>
                         <resourceGiven player="Italians" resource="PUs" quantity="0"/>
                         <resourceGiven player="Americans" resource="PUs" quantity="0"/>
 						<resourceGiven player="Chinese" resource="PUs" quantity="0"/>
-                        <resourceGiven player="French" resource="PUs" quantity="0"/>
+                        <resourceGiven player="French" resource="PUs" quantity="12"/>
 						<resourceGiven player="Eastern_Europe" resource="PUs" quantity="0"/>
 						
                 </resourceInitialize>				
@@ -2199,6 +2369,10 @@
 				<property name="Use Triggers" value="true" editable="false">
 						<boolean/>
 				</property>
+				
+				<property name="Movement By Territory Restricted" value="true" editable="false">
+						<boolean/> 
+				</property>  
 				
 				<property name="Units May Give Bonus Movement" value="true" editable="false">
 						<boolean/>
