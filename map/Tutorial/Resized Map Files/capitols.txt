@@ -1,6 +1,0 @@
-United Kingdom (242, 61)
-Germany (321, 86)
-Southern Italy (307, 169)
-Eastern United States (92, 85)
-France (278, 107)
-Russia (434, 60)
