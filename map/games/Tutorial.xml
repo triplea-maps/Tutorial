@@ -1840,22 +1840,8 @@
 
 
 <!--Conditions-->
-<attatchment name="conditionAttachment010a" attatchTo="AI_British" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
+<attatchment name="conditionAttachment010" attatchTo="AI_British" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
 	<option name="alliedOwnershipTerritories" value="British Somaliland" count="1"/>	
-</attatchment>
-
-<attatchment name="conditionAttachment010b" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
-	<option name="alliedOwnershipTerritories" value="Italian Somaliland" count="1"/>
-</attatchment>
-
-<attatchment name="conditionAttachment010c" attatchTo="AI_French" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
-	<option name="alliedOwnershipTerritories" value="Italian Somaliland" count="1"/>
-	<option name="invert" value="true"/>
-</attatchment>
-
-<attatchment name="conditionAttachment010d" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
-	<option name="alliedOwnershipTerritories" value="Sicily" count="1"/>
-	<option name="invert" value="true"/>
 </attatchment>
 
 <attatchment name="conditionAttachment020a" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.RulesAttachment" type="player">
@@ -1986,34 +1972,28 @@
 
 
 <!--Triggers-->
-
-<attatchment name="triggerAttachment010a" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment010a"/>
-	<option name="uses" value="1"/>
-	<option name="when" value="before:italiansCombatMove"/>
-	<option name="notification" value="Infantryunlocked"/>
-</attatchment>
-
-<attatchment name="triggerAttachment010b" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment010b"/>
-	<option name="uses" value="1"/>
-	<option name="when" value="before:italiansCombatMove"/>
+											
+<attatchment name="triggerAttachment4" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="notification" value="Refertonotes"/>
 </attatchment>
 
-<attatchment name="triggerAttachment010c" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment010c"/>
-	<option name="uses" value="1"/>
-	<option name="when" value="before:italiansCombatMove"/>
-	<option name="notification" value="Abouttriplea"/>
+<attatchment name="triggerAttachment3" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="notification" value="Infantryunlocked"/>
+	<option name="activateTrigger" value="triggerAttachment4:1:false:false:false:false"/>
 </attatchment>
 
-<attatchment name="triggerAttachment010d" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment010d"/>
+<attatchment name="triggerAttachment2" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="notification" value="Abouttriplea"/>	
+	<option name="activateTrigger" value="triggerAttachment3:1:false:false:false:false"/>
+</attatchment>
+															
+<attatchment name="triggerAttachment1" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="conditions" value="conditionAttachment010"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="before:italiansCombatMove"/>
 	<option name="notification" value="Welcome"/>
-</attatchment>   
+	<option name="activateTrigger" value="triggerAttachment2:1:false:false:false:false"/>
+</attatchment>
 
 <attatchment name="triggerAttachment020a" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment020a"/>
@@ -2091,18 +2071,16 @@
 	<option name="notification" value="Battleinstructions"/>
 </attatchment>
 
+<attatchment name="triggerAttachment030g" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="notification" value="Turnorder"/>
+</attatchment>
+
 <attatchment name="triggerAttachment030f" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment030"/>
 	<option name="uses" value="1"/>
-	<option name="when" value="before:germansEndTurn"/>
+	<option name="when" value="before:germansEndTurn"/>	
+	<option name="activateTrigger" value="triggerAttachment030g:1:false:false:false:false"/>
 	<option name="notification" value="Collectincome"/>
-</attatchment>
-
-<attatchment name="triggerAttachment030g" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment030"/>
-	<option name="uses" value="1"/>
-	<option name="when" value="before:germansEndTurn"/>
-	<option name="notification" value="Turnorder"/>
 </attatchment>
 
 <attatchment name="triggerAttachment030h" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
@@ -2199,7 +2177,7 @@
 <attatchment name="triggerAttachment050b" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment050b"/>
 	<option name="uses" value="1"/>
-	<option name="when" value="before:germansPlace"/>
+	<option name="when" value="after:germansNonCombatMove"/>
 	<option name="productionRule" value="production_Germans:buyBattleship"/>
 	<option name="notification" value="Battleshipunlocked"/>
 </attatchment>
@@ -2553,10 +2531,7 @@
 	<option name="notification" value="BritishAwake"/>
 </attatchment>
 
-<attatchment name="triggerAttachment080m" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment080"/>
-	<option name="uses" value="1"/>
-	<option name="when" value="before:germansCombatMove"/>
+<attatchment name="triggerAttachment080m" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">	
 	<option name="notification" value="DanishStraits"/>
 </attatchment>
 
@@ -2564,14 +2539,20 @@
 	<option name="conditions" value="conditionAttachment080"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansCombatMove"/>
+	<option name="activateTrigger" value="triggerAttachment080m:1:false:false:false:false"/>
 	<option name="notification" value="AtlanticConvoy"/>
+</attatchment>
+
+<attatchment name="triggerAttachment080p2" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="notification" value="Destroyerunlocked"/>
 </attatchment>
 
 <attatchment name="triggerAttachment080p" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment080"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansPurchase"/>
-	<option name="notification" value="Destroyerunlocked"/>
+	<option name="notification" value="BattleforAtlantic"/>
+	<option name="activateTrigger" value="triggerAttachment080p2:1:false:false:false:false"/>
 	<option name="productionRule" value="production_Italians:buyDestroyer"/>
 </attatchment>
 
@@ -2580,7 +2561,6 @@
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansPurchase"/>
 	<option name="productionRule" value="production_Germans:buyDestroyer"/>
-	<option name="notification" value="BattleforAtlantic"/>
 </attatchment>
 
 <attatchment name="triggerAttachment080r" attatchTo="AI_British" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
@@ -2626,9 +2606,12 @@
 	<option name="conditions" value="conditionAttachment090"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansPlace"/>
-	<option name="notification" value="GrafZeppelin"/>
 	<option name="productionRule" value="production_Germans:buyCarrier"/>
 	<option name="purchase" value="carrier" count="1"/>
+</attatchment>
+
+<attatchment name="triggerAttachment090b2" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="notification" value="GrafZeppelin"/>
 </attatchment>
 
 <attatchment name="triggerAttachment090b" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
@@ -2636,6 +2619,7 @@
 	<option name="uses" value="1"/>
 	<option name="when" value="before:germansPlace"/>
 	<option name="notification" value="Aircraftcarrierunlocked"/>
+	<option name="activateTrigger" value="triggerAttachment090b2:1:false:false:false:false"/>
 	<option name="productionRule" value="production_Italians:buyCarrier"/>
 </attatchment>
 
@@ -2865,18 +2849,22 @@
 	<option name="relationshipChange" value="AI_Turkey:Germans:Neutrality:War"/>
 </attatchment>
 
+<attatchment name="triggerAttachment130a2" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="notification" value="Artilleryunlocked"/>
+</attatchment>
+
 <attatchment name="triggerAttachment130a" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment130"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="after:britishEndTurn"/>
 	<option name="notification" value="ThreeTurns"/>
+	<option name="activateTrigger" value="triggerAttachment130a2:1:false:false:false:false"/>
 </attatchment>
 
 <attatchment name="triggerAttachment130b" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment130"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="after:britishEndTurn"/>
-	<option name="notification" value="Artilleryunlocked"/>
 	<option name="productionRule" value="production_Germans:buyArtillery"/>
 </attatchment>
 
@@ -2907,20 +2895,18 @@
 			<option name="resourceCount" value="-35"/>
 			<option name="when" value="after:russiansEndTurn"/>
 			<option name="uses" value="3"/>
-		</attatchment>
+		</attatchment>		
+
+<attatchment name="triggerAttachment140b" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
+	<option name="notification" value="AllTech"/>
+</attatchment>
 
 <attatchment name="triggerAttachment140a" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment140"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="after:britishEndTurn"/>
 	<option name="notification" value="TwoTurns"/>
-</attatchment>
-
-<attatchment name="triggerAttachment140b" attatchTo="Italians" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
-	<option name="conditions" value="conditionAttachment140"/>
-	<option name="uses" value="1"/>
-	<option name="when" value="after:britishEndTurn"/>
-	<option name="notification" value="AllTech"/>
+	<option name="activateTrigger" value="triggerAttachment140b:1:false:false:false:false"/>
 </attatchment>
 
 <attatchment name="triggerAttachment140c" attatchTo="Germans" javaClass="games.strategy.triplea.attatchments.TriggerAttachment" type="player">
