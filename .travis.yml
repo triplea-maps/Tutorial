@@ -18,4 +18,4 @@ deploy:
   prerelease: true
   on:
     tags: false
-    all_branches: tru
+    all_branches: true
