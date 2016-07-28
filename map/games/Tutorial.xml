@@ -3,7 +3,7 @@
 <game>
         <info name="Tutorial" version="1.0"/>
         <loader javaClass="games.strategy.triplea.TripleA"/>
-		<triplea minimumVersion="1.5.2"/>
+		<triplea minimumVersion="1.9"/>
 		<diceSides value="6"/>
 		
         <map>		
@@ -3557,11 +3557,11 @@
 First objective: Capture British Somaliland.<br><br></center>
 To achieve this you need to do a few things:<br>
 <ul>
-	<li>Move around the map: Hold right mousebutton and drag</li>
+	<li>Move around the map: Hold right mouse button and drag</li>
 	<li>Find Somalia.....</li>
-	<li>Select the Infantry: Left mouseclick on the unit</li>
+	<li>Select the Infantry: Left mouse click on the unit</li>
 	<li>Move it to British Somaliland</li>
-	<li>Drop the Infantry: Left mouseclick to drop</li>
+	<li>Drop the Infantry: Left mouse click to drop</li>
 	<li>When captured the territory will change color to dark brown</li>
 
 </ul>
@@ -3598,32 +3598,32 @@ Before starting battle first check below how battles work in TripleA.
 <br><br>
 <center><b>Battle</b></center><br><br>
 <img src="Battle1.png"/><br><br>
-This is the Battlewindow.<br>
+This is the Battle window.<br>
 The attacker (Germany) fires first. For each unit a die is rolled.<br><br>
-Infantry have an Attackpower of 1 which means each rolled 1 is a hit. In the above example both Infantry missed (Rolled 3 and 2).<br>
-Armour have an Attackpower of 3. So for each 1,2 or 3 they score a hit (50% chance).<br>
+Infantry have an Attack power of 1 which means each rolled 1 is a hit. In the above example both Infantry missed (Rolled 3 and 2).<br>
+Armour have an Attack power of 3. So for each 1,2 or 3 they score a hit (50% chance).<br>
 In this case the Armour rolled a 3 thus a hit. The enemy Infantry is hit, but still has a chance to return fire, see the picture below.<br><br>
 <img src="Battle2.png"/><br>
 The enemy Infantry was hit, but still has a defense roll.<br>
-Infantry has a Defensepower of 2, so each 1 or 2 scores a hit (33%).<br>
+Infantry has a Defense power of 2, so each 1 or 2 scores a hit (33%).<br>
 In this case it scored a defensive hit (2) and now Germany has to select a casualty. Select an Infantry as casualty because it is the cheaper and weaker unit.<br><br>
 If neither side won the battle you have the option to continue fighting or retreat. When retreating all units retreat to one territory where at least one attacking unit came from. So in this case you can retreat to either Germany or Greater Southern Germany.<br><br>
 To continue click <em><b>Actions >> Done</b></em> and then <em><b>Battle in Slovakia Hungary...</b></em><br>
-If you lost the battlewindow you cand find it in your taskbar, bottom of your screen.<br><br>
+If you lost the Battle window you cand find it in your taskbar, bottom of your screen.<br><br>
 <br><hr><center><b>Objective</b><hr><br>
 Second objective: Capture Poland!<br><br></center>
 Poland is better defended so you will need more units.<br><br>
-If you doubt your attacking army is strong enough you can use the <em><b>Battle Calculator</b></em>. This usefull tool gives you a good indication of your chance of succes in battle.<br><br>
+If you doubt your attacking army is strong enough you can use the <em><b>Battle Calculator</b></em>. This useful tool gives you a good indication of your chance of succes in battle.<br><br>
 To use the Battle Calculator:
 <ul>
 	<li>Move all attacking units to the target territory.</li>
 	<li>Hover the mouse over the target territory.</li>
 	<li>press <em><b>CTRL+B</b></em></li>
 	<li>In the Battle Calculator window press <em><b>Calculate Odds</b></em></li>
-	<li>The top-right number is your chance of succes.</li>
-	<li>If you don't like your odds you can <em><b>Undo</b></em> your CombatMoves.
+	<li>The top-right number is your chance of success.</li>
+	<li>If you don't like your odds you can <em><b>Undo</b></em> your Combat Moves.
 </ul>
-<em><b>Note:</b></em> The Battle Calculator gives you a chance of succes, no guarantee! After all this is a game with Dice!<br><br>
+<em><b>Note:</b></em> The Battle Calculator gives you a chance of success, no guarantee! After all this is a game with Dice!<br><br>
 <br><hr><br>
 <center><b>Turn Order</b></center>
 <br><hr><br>
@@ -3635,7 +3635,7 @@ The new units you buy now can be placed at the end of your turn, after all movem
 Move your units into battle.<br></center><br>
 <center><b>4: Battle</b><br>
 Resolve all battles.<br></center><br>
-<center><b>5: Non-CombatMove</b><br>
+<center><b>5: Non-Combat Move</b><br>
 Move all units that can still move.<br></center><br>
 <center><b>6: Place units</b><br>
 Place the units you bought at the start of your turn.<br>
@@ -3652,9 +3652,9 @@ Finland and Sweden are willing to cooperate but Denmark and Norway will have to 
 <br><hr><br>
 <center><b>Transporting Troops</b></center><br>
 <ul>
-	<li>Move your landunits to a seazone with a Transportship</li>
+	<li>Move your land units to a sea zone with a Transport ship</li>
 	<li>2 Infantry or 1 Infantry + 1 Armour per ship</li>
-	<li>Move Transportships to Seazone for unloading</li>
+	<li>Move Transport ships to Sea zone for unloading</li>
 	<li>Move troops to land</li>
 	<li>Impossible to retreat from amphibious attack!</li>
 </ul><br>
@@ -3662,7 +3662,7 @@ Finland and Sweden are willing to cooperate but Denmark and Norway will have to 
 <center><b>Shore Bombardment</b></center><br>	
 <ul>
 	<li>Move troops to enemy territory by Transport</li>
-	<li>Bring Battleship to same seazone</li>
+	<li>Bring Battleship to same sea zone</li>
 	<li>Hit enemy troops are removed immediately, no returning fire</li>
 	<li>Enemy ships present? Battleship has to fight naval battle, no bombardment possible</li>
 </ul><br>
@@ -3678,7 +3678,7 @@ Capturing the Capital, France, will give you a nice reward.<br>
 <center><b>Capturing a Capital</b></center><br>
 <ul>
 	<li>If you capture an enemy Capital you receive all the PUs that enemy has in the bank</li>
-	<li>Without a Capital the enemy can not receive any income</li>
+	<li>Without a Capital the enemy cannot receive any income</li>
 	<li>For a player to receive income the Capital has to be owned from the start of that players turn</li>
 	<li>So whatever happens, do not lose your own Capital!</li>
 </ul><br>
@@ -3711,6 +3711,17 @@ This nation is an Active AI and will buy, move and attack if the right opportuni
 	<li>Watch out for Anti-Aircraft!</li>
 </ul><br>
 <br><hr><br>
+<center><b>AI Speed Setting</b></center><br>
+<ul>
+	<li>Go to the <b><em>Game-</em></b>tab</li>
+	<li>Select <b><em>Engine Settings</em></b></li>
+	<li>Select <b><em>AI</em></b></li>
+	<li>Change <b><em>AI Pause Duration</em></b></li>
+	<li>Set lower for faster moving AI</li>
+	<li>Set higher for slower moving AI</li>
+	<li>This doesn't change the speed of AI-thinking, just moving!</li>
+</ul><br>
+<br><hr><br>
 <center><b>Review History</b></center><br>
 <ul>
 	<li>Go to the <b><em>Game-</em></b>tab</li>
@@ -3733,12 +3744,12 @@ You will also gain a strong economic base for future military adventures.<br><br
 Make sure the Italian Navy rules the Mediterranean. This will allow you to transport units to Africa. Capturing Egypt is the key to Victory!<br>
 <br><hr><center><b>German Objective</b><hr><br>
 Destroy <b>all</b> British Naval vessels in the Atlantic Ocean and North Sea.<br><br></center>
-By building a strong Navy and taking on the British you can prevent British amfibious landings in Europe. Keep them locked up on their Island! You can retreat to safety in the Baltic sea if necessary.<br>
+By building a strong Navy and taking on the British you can prevent British amphibious landings in Europe. Keep them locked up on their Island! You can retreat to safety in the Baltic sea if necessary.<br>
 <br><hr><br>
 <center><b>Straits & Canals</b></center><br>
 <ul>
 	<li>These are narrow seaways limiting passage of ships</li>
-	<li>Passage of ships is controlled by owning 1 or 2 landterritories</li>
+	<li>Passage of ships is controlled by owning 1 or 2 land territories</li>
 	<li>They can be of great strategic value</li><br><br>
 	<li>Danish Straits: Control Denmark</li>
 	<li>Strait of Gibraltar: Control Gibraltar</li>
@@ -3749,7 +3760,7 @@ By building a strong Navy and taking on the British you can prevent British amfi
 <center><b>Rockets Advance</b></center><br>
 <ul>
 	<li>Technology advance</li>
-	<li>Each Anti-Aircraftgun can shoot rockets at an enemy Factory</li>
+	<li>Each Anti-Aircraft gun can shoot rockets at an enemy Factory</li>
 	<li>Range = 3</li>
 	<li>Each strike rolls 1 die, number rolled = PU's lost</li>
 	<li>Maximum damage = territory value</li>
@@ -3760,16 +3771,16 @@ By building a strong Navy and taking on the British you can prevent British amfi
 <ul>
 	<li>Choose which Technology to research</li>
 	<li>Buy dice, 5 PUs per die</li>
-	<li>Roll dice, 6 = succes</li>
+	<li>Roll dice, 6 = success</li>
 	<li><em><b>Stats-</b></em>tab shows who owns what technology</li>
 </ul><br>
 <center><b>Technologies</b></center><br>
 <ul>
-	<li>Rockets Advance: AAguns can target factories</li>
-	<li>SuperSubs: Each Submarine's attack power is increased by 1</li>
-	<li>LongRangeAir: All aircraft range is increased by 2</li>
+	<li>Rockets Advance: AA guns can target factories</li>
+	<li>Super Subs: Each Submarine's attack power is increased by 1</li>
+	<li>Long Range Air: All aircraft range is increased by 2</li>
 	<li>Jet Power: All Fighters Defensive power is increased by 1</li>
-	<li>Destroyers can Bombard: Can support amfibious attack</li>
+	<li>Destroyers can Bombard: Can support amphibious attack</li>
 	<li>Heavy Bomber: Each Bomber throws double dice!</li>
 </ul><br>
 </div>
@@ -3779,8 +3790,8 @@ By building a strong Navy and taking on the British you can prevent British amfi
 <img src="Russia.png"/><br>
 <br><hr><center><b>Objective</b><hr><br>
 Capture all three Russian Production Territories:<br>Novgorod, Rostov and the Capital Russia!<br><br></center>
-Build a powerfull army to overwhelm the Russians.<br>
-Gaining the upperhand in the Baltic Sea will allow you to strike fast and by surprise. Capturing Novgorod quickly will deny the enemy use of its Factory and allow you to produce troops close to Russia.<br><br>
+Build a powerful army to overwhelm the Russians.<br>
+Gaining the upper hand in the Baltic Sea will allow you to strike fast and by surprise. Capturing Novgorod quickly will deny the enemy use of its Factory and allow you to produce troops close to Russia.<br><br>
 Italy can attack through Romania and Ukraine.<br>
 Capturing Turkey opens up a new route into Southern Russia and the Turkish Straits for your Navy to move through. The Italian navy can then launch surprise attacks behind enemy lines and reinforce troops on the frontline quickly.<br><br>
 
@@ -3789,8 +3800,8 @@ Capturing Turkey opens up a new route into Southern Russia and the Turkish Strai
 
 <div style="padding:10px;font-size:14px;background-color:#CCCC66;text-align:justify;width:420px;">
 <br><Center><hr><b>Credits</b><hr><br><br>
-Scenariodesign & XML: ZjelcoP & CrazyGerman<br><br>
-Pop-ups & GameNotes: ZjelcoP<br><br>
+Scenario design & XML: ZjelcoP & CrazyGerman<br><br>
+Pop-ups & Game Notes: ZjelcoP<br><br>
 Original map creation: Veqryn & Bung<br><br>
 Creating an awesome game! : TripleA developers & Community<br><br><br>
 <b>Special Thanks to the Following artists for allowing the use of their amazing Artwork:</b></center><br>
