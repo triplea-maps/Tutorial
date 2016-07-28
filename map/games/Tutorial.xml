@@ -3711,15 +3711,6 @@ This nation is an Active AI and will buy, move and attack if the right opportuni
 	<li>Watch out for Anti-Aircraft!</li>
 </ul><br>
 <br><hr><br>
-<center><b>AI Speed Setting</b></center><br>
-<ul>
-	<li>Go to the <b><em>Game-</em></b>tab</li>
-	<li>Select <b><em>AI Pause Duration</em></b></li>
-	<li>Set to 50ms for fastest moving AI</li>
-	<li>Set to 1000ms or more for slow moving AI</li>
-	<li>This doesn't change the speed of AI-thinking!</li>
-</ul><br>
-<br><hr><br>
 <center><b>Review History</b></center><br>
 <ul>
 	<li>Go to the <b><em>Game-</em></b>tab</li>
