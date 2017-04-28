@@ -1,8 +1,6 @@
 Tutorial TripleA Gameplay
 
-This is a tutorial for players new to TripleA and it's Game-engine.
-The aim is to have it included in the Gamedownloadpackage and available as a button on the left side of the TripleA startscreen.
-This way anyone that downloaded the game can easily start with the tutorial. 
+This is a tutorial for players new to TripleA and its game engine.
 
 The tutorial is built up as a campaign reflecting the expansion of Axis forces Germany and Italy in Europe and Africa.
 It handles basic game concepts, movement, battle, technology and units with their unique properties.
