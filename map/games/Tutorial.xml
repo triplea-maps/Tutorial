@@ -3608,8 +3608,15 @@ The enemy Infantry was hit, but still has a defense roll.<br>
 Infantry has a Defense power of 2, so each 1 or 2 scores a hit (33%).<br>
 In this case it scored a defensive hit (2) and now Germany has to select a casualty. Select an Infantry as casualty because it is the cheaper and weaker unit.<br><br>
 If neither side won the battle you have the option to continue fighting or retreat. When retreating, all units retreat to one territory where at least one attacking unit came from. So in this case you can retreat to either Germany or Greater Southern Germany.<br><br>
-To continue click <em><b>Actions >> Done</b></em> and then <em><b>Battle in Slovakia Hungary...</b></em><br>
-If you lost the Battle window you can find it in your taskbar at the bottom of your screen.<br><br>
+To continue click <em><b>Actions >> Done</b></em> and then <em><b>Battle in Slovakia Hungary...</b></em><br><br>
+<div style="margin:10px;padding:10px;border:1px solid black;">
+<center><b>Can't find the Battle window?</b></center><br>
+The Battle window (among others) is a pop-up window separate from the main TripleA window. If it disappears, you can find it again using one of the following approaches:
+<ul>
+  <li>On Windows and Linux distros that have a taskbar, you can find an icon for the Battle window on the taskbar (usually at the bottom of your screen).</li>
+  <li>Otherwise, use your window manager to search or cycle through the background windows until you find the Battle window. Simply minimizing the main TripleA window may reveal the Battle window immediately.</li>
+</ul>
+</div>
 <br><hr><center><b>Objective</b><hr><br>
 Second objective: Capture Poland!<br><br></center>
 Poland is better defended so you will need more units.<br><br>
