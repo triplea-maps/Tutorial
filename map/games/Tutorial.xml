@@ -687,15 +687,15 @@
         <playerList>
                 <!-- In turn order -->
 				<player name="Germans" optional="false"/>
-				<player name="AI_Russians" optional="false"/>
+				<player name="AI_Russians" optional="false" defaultType="AI" isHidden="true"/>
 				<player name="Italians" optional="false"/>
-				<player name="AI_Balkans" optional="false"/>
-				<player name="AI_Scandinavia" optional="true"/>
-				<player name="AI_French" optional="false"/>				
-				<player name="AI_Eastern_Europe" optional="true"/>				
-				<player name="AI_Turkey" optional="true"/>
-				<player name="AI_British" optional="false"/>
-				<player name="Neutral_Nations" optional="true"/>
+				<player name="AI_Balkans" optional="false" defaultType="AI" isHidden="true"/>
+				<player name="AI_Scandinavia" optional="true" defaultType="AI" isHidden="true"/>
+				<player name="AI_French" optional="false" defaultType="AI" isHidden="true"/>				
+				<player name="AI_Eastern_Europe" optional="true" defaultType="AI" isHidden="true"/>				
+				<player name="AI_Turkey" optional="true" defaultType="AI" isHidden="true"/>
+				<player name="AI_British" optional="false" defaultType="AI" isHidden="true"/>
+				<player name="Neutral_Nations" optional="true" defaultType="DoesNothing" isHidden="true"/>
 					
 				<!-- Alliances -->				
                 
