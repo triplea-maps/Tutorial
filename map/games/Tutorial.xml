@@ -686,9 +686,9 @@
 		
         <playerList>
                 <!-- In turn order -->
-				<player name="Germans" optional="false"/>
+				<player name="Germans" optional="false" defaultType="Human" isHidden="true"/>
 				<player name="AI_Russians" optional="false" defaultType="AI" isHidden="true"/>
-				<player name="Italians" optional="false"/>
+				<player name="Italians" optional="false" defaultType="Human" isHidden="true"/>
 				<player name="AI_Balkans" optional="false" defaultType="AI" isHidden="true"/>
 				<player name="AI_Scandinavia" optional="true" defaultType="AI" isHidden="true"/>
 				<player name="AI_French" optional="false" defaultType="AI" isHidden="true"/>				
@@ -2064,12 +2064,14 @@
 	<option name="placement" value="Kenya:nomove" count="1"/>	
 </attachment>
 
+		<!-- Obsolete on 2.0 release. Single battles start automatically.
 <attachment name="triggerAttachment030e" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
 	<option name="conditions" value="conditionAttachment030"/>
 	<option name="uses" value="1"/>
 	<option name="when" value="after:germansCombatMove"/>
 	<option name="notification" value="Battleinstructions"/>
 </attachment>
+-->
 
 <attachment name="triggerAttachment030g" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
 	<option name="notification" value="Turnorder"/>
@@ -3571,7 +3573,7 @@ Look in the <em><b>Movement/Selection help</b></em>-section.<br>
 Try out the different options and find one you like best.<br>
 Tip: Using the minimap to move around on the big map works great!<br><br><br>
 <center><b>Captured British Somaliland?</b></center><br>
-Then go to the <em><b>Action</b></em>-tab next to the <em><b>Notes</b></em>-tab and click <em><b>Done</b></em>.<br>
+Then go to the <em><b>Actions</b></em>-tab and click <em><b>Done</b></em>.<br>
 <br><hr><br>
 <center><b>New unit info</b></center><br>
 So you got yourselves a brand new Tank hey?<br>
@@ -3585,7 +3587,7 @@ Look in the <em><b>Unit help</b></em>-section (more detailed info).</li>
 Second objective: Capture Kenya, Ethiopia and Anglo-Egyptian Sudan.<br><br>
 If you use your Infantry to capture Ethiopia and your Tank to capture the other two territories you can do this in just one turn!<br><br>
 The white territories (like Egypt) are Neutral and cannot be attacked.<br><br>
-Done? Again go to the <em><b>Action</b></em>-tab and click <em><b>Done</b></em>.<br><br>
+Done? Again go to the <em><b>Actions</b></em>-tab and click <em><b>Done</b></em>.<br><br>
 </div>
 
 
@@ -3608,7 +3610,7 @@ The enemy Infantry was hit, but still has a defense roll.<br>
 Infantry has a Defense power of 2, so each 1 or 2 scores a hit (33%).<br>
 In this case it scored a defensive hit (2) and now Germany has to select a casualty. Select an Infantry as casualty because it is the cheaper and weaker unit.<br><br>
 If neither side won the battle you have the option to continue fighting or retreat. When retreating, all units retreat to one territory where at least one attacking unit came from. So in this case you can retreat to either Germany or Greater Southern Germany.<br><br>
-To continue click <em><b>Actions >> Done</b></em> and then <em><b>Battle in Slovakia Hungary...</b></em><br><br>
+To continue click <em><b>Actions >> Done</b></em><br><br>
 <div style="margin:10px;padding:10px;border:1px solid black;">
 <center><b>Can't find the Battle window?</b></center><br>
 The Battle window (among others) is a pop-up window separate from the main TripleA window. If it disappears, you can find it again using one of the following approaches:
